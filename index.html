@@ -4050,7 +4050,7 @@ the applications must use the pod network for traffic</p>
 <div class="sect3">
 <h4 id="cnf-best-practices-far-edge-application-exclusive-cpu-pool"><a class="link" href="#cnf-best-practices-far-edge-application-exclusive-cpu-pool">4.2.2. Application exclusive CPU pool</a></h4>
 <div class="paragraph">
-<p>Cpusets constrain the CPU and memory placement of task to the resources within a task’s current cpuset. Within cgroup, the workload can set CPU affinity to reduce the context switching, however CPU scheduler still performs load balances for non-cpu-pinned workload across all the CPUs in the cpuset. In addition, the following annotation is required to accompany the workload. See <a href="https://docs.openshift.com/container-platform/4.11/scalability_and_performance/cnf-low-latency-tuning.html#disabling-cpu-cfs-quota_cnf-master">Disabling CPU CFS quota</a>:</p>
+<p>CPUsets constrain the CPU and memory placement of task to the resources within a task’s current cpuset. Within cgroup, the workload can set CPU affinity to reduce the context switching, however CPU scheduler still performs load balances for non-cpu-pinned workload across all the CPUs in the cpuset. In addition, the following annotation is required to accompany the workload. See <a href="https://docs.openshift.com/container-platform/4.11/scalability_and_performance/cnf-low-latency-tuning.html#disabling-cpu-cfs-quota_cnf-master">Disabling CPU CFS quota</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5649,7 +5649,7 @@ All trademarks used herein are property of their respective owners.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.5<br>
-Last updated 2023-11-20 19:05:55 UTC
+Last updated 2023-11-20 21:23:59 UTC
 </div>
 </div>
 <!-- Nav bar -->

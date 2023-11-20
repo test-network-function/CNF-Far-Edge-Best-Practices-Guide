@@ -3918,7 +3918,7 @@ unavailable must implement pod disruption budgets to prevent disruption in the e
 <dl>
 <dt class="hdlist1">ClusterRole / ClusterRoleBinding</dt>
 <dd>
-<p>A <code>ClusterRole</code> represents a set of permissions at the cluster level that can be used by multiple namespaces. The <code>ClusterRoleBinding</code> is used for granting the permissions defined in a <code>ClusterRole</code> to a user or group of users at a namespace level. Applications are not permitted to install cluster roles or create cluster role bindings. This is an administrative activity done by cluster administrators. CNFs should not use cluster roles; exceptions can be granted to allow this, however this is discouraged.</p>
+<p>A <code>ClusterRole</code> represents a set of permissions at the cluster level that can be used by multiple namespaces. The <code>ClusterRoleBinding</code> is used for granting the permissions defined in a <code>ClusterRole</code> to a user or group of users at a namespace level. Applications are not permitted to install cluster roles or create cluster role bindings. This is an administrative activity done by cluster administrators. CNFs should not use cluster roles; exceptions can be granted to allow this, however this is discouraged. It is recommended to define a set of allowed roles and allow binding to these only. Avoid using cluster roles for CNFs, instead use Roles local to the namespace where the CNF is deployed.</p>
 </dd>
 </dl>
 </div>
@@ -5649,7 +5649,7 @@ All trademarks used herein are property of their respective owners.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.5<br>
-Last updated 2023-11-20 16:16:39 UTC
+Last updated 2023-11-20 19:05:55 UTC
 </div>
 </div>
 <!-- Nav bar -->

@@ -12,7 +12,7 @@
 
 * Use the main CNI for all traffic - MULTUS/SRIOV/MacVLAN are for corner cases only (extreme throughput requirements, protocols that are unable to be load balanced)
 
-* CNFs should employ N+k redundancy models
+* CNFs should employ N+k redundancy models (not applicable for Far Edge)
 
 * CNFs MUST define their pod affinity/anti-affinity rules. See test cases link:https://github.com/test-network-function/cnf-certification-test/blob/main/CATALOG.md#lifecycle-affinity-required-pods[lifecycle-affinity-required-pods], link:https://github.com/test-network-function/cnf-certification-test/blob/main/CATALOG.md#lifecycle-pod-high-availability[lifecycle-pod-high-availability]
 

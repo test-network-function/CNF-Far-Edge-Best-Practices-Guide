@@ -24,7 +24,7 @@ resources:
 [id="cnf-best-practices-far-edge-application-exclusive-cpu-pool"]
 == Application exclusive CPU pool
 
-Cpusets constrain the CPU and memory placement of task to the resources within a task’s current cpuset. Within cgroup, the workload can set CPU affinity to reduce the context switching, however CPU scheduler still performs load balances for non-cpu-pinned workload across all the CPUs in the cpuset. In addition, the following annotation is required to accompany the workload. See link:https://docs.openshift.com/container-platform/4.11/scalability_and_performance/cnf-low-latency-tuning.html#disabling-cpu-cfs-quota_cnf-master[Disabling CPU CFS quota]:
+CPUsets constrain the CPU and memory placement of task to the resources within a task’s current cpuset. Within cgroup, the workload can set CPU affinity to reduce the context switching, however CPU scheduler still performs load balances for non-cpu-pinned workload across all the CPUs in the cpuset. In addition, the following annotation is required to accompany the workload. See link:https://docs.openshift.com/container-platform/4.11/scalability_and_performance/cnf-low-latency-tuning.html#disabling-cpu-cfs-quota_cnf-master[Disabling CPU CFS quota]:
 
 [source,yaml]
 ----

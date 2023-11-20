@@ -3151,7 +3151,7 @@ The microservice architectural style is an approach to developing a single appli
 <p>Use the main CNI for all traffic - MULTUS/SRIOV/MacVLAN are for corner cases only (extreme throughput requirements, protocols that are unable to be load balanced)</p>
 </li>
 <li>
-<p>CNFs should employ N+k redundancy models</p>
+<p>CNFs should employ N+k redundancy models (not applicable for Far Edge)</p>
 </li>
 <li>
 <p>CNFs MUST define their pod affinity/anti-affinity rules. See test cases <a href="https://github.com/test-network-function/cnf-certification-test/blob/main/CATALOG.md#lifecycle-affinity-required-pods">lifecycle-affinity-required-pods</a>, <a href="https://github.com/test-network-function/cnf-certification-test/blob/main/CATALOG.md#lifecycle-pod-high-availability">lifecycle-pod-high-availability</a></p>
@@ -5646,7 +5646,7 @@ All trademarks used herein are property of their respective owners.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.5<br>
-Last updated 2023-11-07 17:21:32 UTC
+Last updated 2023-11-20 16:03:06 UTC
 </div>
 </div>
 <!-- Nav bar -->

@@ -31,7 +31,7 @@ Also related to this, by default containers are launched with shared images usin
 Horizontal scaling and redundancy::
 Support scaling and/or redundancy of your application through increasing/decreasing the number of application pods in your deployment, rather than requiring increased/decreased resources for a single application pod.
 +
-Also follow the principles described in ‘Process Disposability’, i.e. stateless containers with quick startup and teardown times.
+Also follow the principles described in **Process Disposability**, i.e. stateless containers with quick startup and teardown times.
 
 Self-containment::
 A container should contain everything it needs at build time. The container should rely only on the presence of the Linux kernel and have any additional libraries added into it at the time the container is built. The container image should NOT dynamically install additional packages at runtime.

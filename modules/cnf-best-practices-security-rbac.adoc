@@ -5,7 +5,7 @@ Roles / RoleBindings:: A `Role` represents a set of permissions within a particu
 
 See test case link:https://github.com/test-network-function/cnf-certification-test/blob/main/CATALOG.md#access-control-pod-role-bindings[access-control-pod-role-bindings]
 
-ClusterRole / ClusterRoleBinding:: A `ClusterRole` represents a set of permissions at the cluster level that can be used by multiple namespaces. The `ClusterRoleBinding` is used for granting the permissions defined in a `ClusterRole` to a user or group of users at a namespace level. Applications are not permitted to install cluster roles or create cluster role bindings. This is an administrative activity done by cluster administrators. CNFs should not use cluster roles; exceptions can be granted to allow this, however this is discouraged.
+ClusterRole / ClusterRoleBinding:: A `ClusterRole` represents a set of permissions at the cluster level that can be used by multiple namespaces. The `ClusterRoleBinding` is used for granting the permissions defined in a `ClusterRole` to a user or group of users at a namespace level. Applications are not permitted to install cluster roles or create cluster role bindings. This is an administrative activity done by cluster administrators. CNFs should not use cluster roles; exceptions can be granted to allow this, however this is discouraged. It is recommended to define a set of allowed roles and allow binding to these only. Avoid using cluster roles for CNFs, instead use Roles local to the namespace where the CNF is deployed.
 
 See link:https://docs.openshift.com/container-platform/4.7/authentication/using-rbac.html[Using RBAC to define and apply permissions] for more information.
 

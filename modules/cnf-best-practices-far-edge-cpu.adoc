@@ -93,7 +93,9 @@ resources:
 
 . Use RT CPU scheduling policy, like SCHED_RR, with lower priority levels, which will be equivalent to SMP configuration of threads running on not-isolcpu cores.
 
-For both Guaranteed and non-guaranteed within a single Pod, it is possible to create a Pod with multiple containers and only cpu-pin some of them.
+The above applies for guaranteed and non-guaranteed QoS within a single Pod.
+
+It is possible to create a Pod with multiple containers and only pin some of the CPUs.
 
 Follow these rules:
 

@@ -96,6 +96,9 @@ This doesn't include:
 
 All the administrative operations (except `ethtool`) mentioned above that require the `NET_ADMIN` capability should already be supported on the host by various CNIs in Openshift.
 
+[TAP Device]
+link:https://cloud.redhat.com/blog/your-guide-to-tap-devices-in-openshift-pods[CNI TAP] can be used to create tap devices and avoid NET_ADMIN.
+
 .CNF requirement
 [IMPORTANT]
 ====

@@ -18,7 +18,7 @@ Users can choose to specify the required permissions for their running applicati
 
 The following runtime and SCC attributes control the capabilities that will be granted to a new container:
 
-* The capabilities granted to the CRI-O engine. The default capabilities are listed here: 
+* The capabilities granted to the CRI-O engine. The default capabilities are listed link:https://github.com/cri-o/cri-o/blob/master/docs/crio.conf.5.md[here]
 +
 [NOTE]
 ====
@@ -43,7 +43,7 @@ Refer to link:https://docs.openshift.com/container-platform/latest/authenticatio
 [id="cnf-best-practices-default-capabilities"]
 == DEFAULT capabilities
 
-The default capabilities that are allowed via the restricted SCC are as follows. link:https://github.com/cri-o/cri-o/blob/master/internal/config/capabilities/capabilities.go[]
+The default capabilities that are allowed via the restricted SCC are as follows. 
 
 * `"CHOWN"`
 * `"DAC_OVERRIDE"`

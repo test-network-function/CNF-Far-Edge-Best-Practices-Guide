@@ -51,5 +51,6 @@ In OpenShift, multicast is supported for both the default interface (OVN or Open
 
 * link:https://docs.openshift.com/container-platform/latest/networking/openshift_sdn/enabling-multicast.html[Enabling multicast for a project]
 * link:https://docs.openshift.com/container-platform/latest/networking/hardware_networks/using-sriov-multicast.html#nw-using-an-sriov-interface-for-multicast_using-sriov-multicast[Configuring an SR-IOV interface for multicast]
-* If your application works as a multicast source and you want to utilize the additional interfaces to carry the multicast traffic, then you don’t need the `NET_ADMIN` capability. Follow the instructions in link:https://docs.openshift.com/container-platform/latest/networking/hardware_networks/using-sriov-multicast.html[Using high performance multicast] to set the correct multicast route in the pod’s routing table.
+
+If your application works as a multicast source and you want to utilize the additional interfaces to carry the multicast traffic, then you don’t need the `NET_ADMIN` capability. Follow the instructions in link:https://docs.openshift.com/container-platform/latest/networking/hardware_networks/using-sriov-multicast.html[Using high performance multicast] to set the correct multicast route in the pod’s routing table.
 

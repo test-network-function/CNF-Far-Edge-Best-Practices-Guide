@@ -101,3 +101,6 @@ From the DU application perspective, a new `cloud-event-proxy` sidecar container
 
 The steps to get a DU application subscribed are described link:https://docs.openshift.com/container-platform/latest/networking/using-ptp.html#cnf-fast-event-notifications-api-refererence_using-ptp[here], along with several examples of use.
 
+Monitoring PTP fast event metrics
+PTP fast event metrics can be monitored in the OpenShift Container Platform web console by using the pre-configured and self-updating Prometheus monitoring stack as explained link:https://docs.openshift.com/container-platform/4.11/networking/using-ptp.html#cnf-fast-event-metrics-in-prometheus_using-ptp[here].
+From the DU application perspective, the Prometheus metrics support helps to set up custom alerting manager systems for early detection issues.

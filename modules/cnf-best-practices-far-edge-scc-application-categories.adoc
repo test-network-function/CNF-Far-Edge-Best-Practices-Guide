@@ -227,7 +227,7 @@ spec:
       medium: HugePages
 ----
 
-More can be found at link:https://docs.google.com/document/d/1QwS5Plr9uMgu9hCKNQdiXpWbC9u7ErpBwr761aJ5-ec/edit#bookmark=id.kql6vaad1cf0[12].
+More info can be found link:https://docs.openshift.com/container-platform/4.14/networking/hardware_networks/using-dpdk-and-rdma.html[here].
 
 Recommended SCC definition:
 

@@ -1,0 +1,7 @@
+[id="k8s-best-practices-pod-resource-profiles"]
+= Pod resource profiles
+
+CaaS Platform has a default scheduler that is responsible for being aware of the current available resources on the platform, and placing containers / applications on the platform appropriately.
+
+All pods should have a resource request that is the minimum amount of resources the pod is expected to use at steady state for both memory and CPU.
+

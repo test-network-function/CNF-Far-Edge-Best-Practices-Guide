@@ -119,7 +119,7 @@ include::modules/k8s-best-practices-security-rbac.adoc[leveloffset=+2]
 
 include::modules/k8s-best-practices-multus.adoc[leveloffset=+2]
 
-include::modules/cnf-far-edge-best-practices-labels.adoc[leveloffset=+2]
+include::modules/k8s-far-edge-best-practices-labels.adoc[leveloffset=+2]
 
 include::modules/k8s-best-practices-far-edge-far-edge-specific-cnf-requirements.adoc[leveloffset=+1]
 

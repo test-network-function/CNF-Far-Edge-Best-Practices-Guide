@@ -1,0 +1,16 @@
+[id="k8s-best-practices-high-level-k8s-restrictions"]
+= Workload restrictions
+
+* Workloads may not use host networking
+
+* Namespace should not be created by the Workloads deployment method (Helm / Operator)
+
+* Workloads may not perform Role creation
+
+* Workloads may not perform Rolebinding creation
+
+* Workloads may not have Cluster Roles
+
+* Workloads are not authorized to bring their own CNI
+
+* Workloads may not deploy Daemonsets

@@ -1,4 +1,0 @@
-[id="cnf-best-practices-developer-guide"]
-= CNF developer guide
-
-This section discusses recommendations and requirements for CNF application builders.

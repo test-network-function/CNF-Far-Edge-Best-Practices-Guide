@@ -1,0 +1,4 @@
+[id="k8s-best-practices-developer-guide"]
+= Workload developer guide
+
+This section discusses recommendations and requirements for Workload application builders.

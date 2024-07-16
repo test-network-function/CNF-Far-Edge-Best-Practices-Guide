@@ -1,0 +1,52 @@
+[id="k8s-best-practices-cloud-native-design-best-practices"]
+= Cloud-native design best practices
+
+The following best practices highlight some key principles of cloud-native application design.
+
+Single purpose w/messaging interface::
+A container should address a single purpose with a well-defined (typically RESTful API) messaging interface. The motivation here is that such a container image is more reusable and more replaceable/upgradeable.
+
+High observability::
+A container must provide APIs for the platform to observe the container health and act accordingly. These APIs include health checks (liveness and readiness), logging to stderr and stdout for log aggregation (by tools such as `Logstash` or `Filebeat`), and integrate with tracing and metrics-gathering libraries (such as `Prometheus` or `Metricbeat`).
+
+Lifecycle conformance::
+A container must receive important events from the platform and conform/react to these events properly. For example, a container should catch SIGTERM or SIGKILL from the platform and shut down as quickly as possible. Other typically important events from the platform are PostStart to initialize before servicing requests and PreStop to release resources cleanly before shutting down.
+
+See test cases link:https://github.com/test-network-function/cnf-certification-test/blob/main/CATALOG.md#lifecycle-container-shutdown[lifecycle-container-shutdown], link:https://github.com/test-network-function/cnf-certification-test/blob/main/CATALOG.md#lifecycle-container-startup[lifecycle-container-startup]
+
+Image immutability::
+Container images are meant to be immutable; i.e. customized images for different environments should typically not be built. Instead, an external means for storing and retrieving configurations that vary across environments for the container should be used. Additionally, the container image should NOT dynamically install additional packages at runtime.
+
+Process disposability::
+Containers should be as ephemeral as possible and ready to be replaced by another container instance at any point in time. There are many reasons to replace a container, such as failing a health check, scaling down the application, migrating the containers to a different host, platform resource starvation, or another issue.
++
+This means that containerized applications must keep their state externalized or distributed and redundant. To store files or block level data, persistent volume claims should be used. For information such as user sessions, use of an external, low-latency, key-value store such as redis should be used. Process disposability also requires that the application should be quick in starting up and shutting down, and even be ready for a sudden, complete hardware failure.
++
+Another helpful practice in implementing this principle is to create small containers. Containers in cloud-native environments may be automatically scheduled and started on different hosts. Having smaller containers leads to quicker start-up times because before being restarted, containers need to be physically copied to the host system.
++
+A corollary of this practice is to "retry instead of crashing", for example, When one service in your application depends on another service, it should not crash when the other service is unreachable. For example, your API service is starting up and detects the database is unreachable. Instead of failing and refusing to start, you design it to retry the connection. While the database connection is down the API can respond with a 503 status code, telling the clients that the service is currently unavailable. This practice should already be followed by applications, but if you are working in a containerized environment where instances are disposable, then the need for it becomes more obvious.
++
+Also related to this, by default containers are launched with shared images using COW filesystems which only exist as long as the container exists. Mounting Persistent Volume Claims enables a container to have persistent physical storage. Clearly defining the abstraction for what storage is persisted promotes the idea that instances are disposable.
+
+
+Horizontal scaling and redundancy::
+Support scaling and/or redundancy of your application through increasing/decreasing the number of application pods in your deployment, rather than requiring increased/decreased resources for a single application pod.
++
+Also follow the principles described in **Process Disposability**, i.e. stateless containers with quick startup and teardown times.
+
+Self-containment::
+A container should contain everything it needs at build time. The container should rely only on the presence of the Linux kernel and have any additional libraries added into it at the time the container is built. The container image should NOT dynamically install additional packages at runtime.
++
+The only exceptions are things such as configurations, which vary between different environments and must be provided at runtime; for example, through Kubernetes ConfigMap
+
+Runtime confinement::
+A container declares its resource requirements (cpu, memory, networking, disk) to the platform. The container must stay confined to the indicated resource requirements.
+
+Use small container images::
+Use the smallest base image possible. To reduce the size of your image, install only what is strictly needed inside it. Clean up temporary files and avoid the installation of unnecessary packages. This reduces container size, build time, and networking time when copying container images. Layer squashing may also be leveraged to hide secrets.
+
+Layer the application::
+Package a single app per container. Do not replace VM’s with containers. Try to create images with common layers. After the initial download, only the layers that make each image unique are needed, thereby reducing the overhead on downloads.
+
+Image tagging::
+Never build off the latest tag—this prevents builds from being reproducible over time. Properly tag your images. Tagging the image lets users identify a specific version of your software in order to download it. For this reason, tightly link the tagging system on container images to the release policy of your software.

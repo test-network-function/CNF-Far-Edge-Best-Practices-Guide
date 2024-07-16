@@ -3069,6 +3069,7 @@ pre.rouge .gs {
 <li><a href="#k8s-best-practices-requests-limits">5.8. Requests/Limits</a></li>
 <li><a href="#k8s-best-practices-security-and-role-based-access-control">5.9. Security and role-based access control</a></li>
 <li><a href="#k8s-best-practices-multus">5.10. MULTUS</a></li>
+<li><a href="#k8s-far-edge-best-practices-labels">5.11. Labels</a></li>
 </ul>
 </li>
 <li><a href="#k8s-best-practices-far-edge-far-edge-specific-cnf-requirements">6. Far Edge specific Workload requirements</a>
@@ -4948,8 +4949,14 @@ the applications must use the pod network for traffic</p>
 <div class="paragraph">
 <p>See <a href="https://docs.openshift.com/container-platform/latest/networking/multiple_networks/understanding-multiple-networks.html">Understanding multiple networks</a> for more information.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="k8s-far-edge-best-practices-labels"><a class="link" href="#k8s-far-edge-best-practices-labels">5.11. Labels</a></h3>
 <div class="paragraph">
-<p>Unresolved directive in main.adoc - include::modules/cnf-far-edge-best-practices-labels.adoc[leveloffset=+2]</p>
+<p>Labels are used to organize and select subsets of objects. For example, labels enable a service to find and direct traffic to an appropriate pod. While pods can come and go, when labeled appropriately, the service will detect new pods, or a lack of pods, and forward or reduce the traffic accordingly.</p>
+</div>
+<div class="paragraph">
+<p>When designing your label scheme, it might make sense to map applications as types, location, departments, roles, etc. The scheduler will then use these attributes when colocating pods or spreading the pods out amongst the cluster. It is also possible to search for resources by label.</p>
 </div>
 </div>
 </div>
@@ -8505,7 +8512,7 @@ All trademarks used herein are property of their respective owners.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.5<br>
-Last updated 2024-07-16 17:39:50 UTC
+Last updated 2024-07-16 17:49:35 UTC
 </div>
 </div>
 <!-- Nav bar -->
